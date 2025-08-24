@@ -16,7 +16,7 @@
 		const email = emailInput.value;
 		
 		if (email) {
-			window.location.href = `https://forms.hackclub.com/daydream-sign-up?email=${encodeURIComponent(email)}`;
+			window.location.href = `https://forms.hackclub.com/daydream-sign-up?event=rectRv5ujPG8rllEc&email=${encodeURIComponent(email)}`;
 		}
 	}
 </script>

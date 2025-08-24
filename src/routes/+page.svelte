@@ -9,10 +9,10 @@
 	// Configuration - Put your information here!
 	const eventName = "Vienna"; // This should be the name of your event WITHOUT "Daydream" at the start
 	const eventLocation = "Vienna";
-	const eventAddress = "Vienna"; // Leave this empty if you don't want an address
+	const eventAddress = "the Danube International School Vienna (Josef-Gall-Gasse 2)"; // Leave this empty if you don't want an address
 	const signupLink = "https://forms.hackclub.com/daydream-sign-up?event=rectRv5ujPG8rllEc"; // Get your custom sign up link from this page: https://airtable.com/apppg7RHZv6feM66l/shr4kFqURo8fMIRie
 	// These two are optional-- leave them empty if you don't have anything!
-	const directionsURL = ""
+	const directionsURL = "https://google.com/maps/place/Danube+International+School+Vienna+GmbH/@48.1979175,16.3868059,14z/data=!4m6!3m5!1s0x476d07124d580dab:0x5f764d59d413a792!8m2!3d48.2098183!4d16.397365!16s%2Fg%2F1tl1gpf0?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D"
 	const contactLink = "mailto:vienna@daydream.hackclub.com"
 	
 	// Sponsors Configuration - disable this if you don't have any sponsors to display!
@@ -21,7 +21,7 @@
 		{ image: "/example/logo1.png", name: "Sponsor 1", url: "https://example1.com" },
 		{ image: "/example/logo2.png", name: "Sponsor 2", url: "https://example2.com" },
 		{ image: "/example/logo3.png", name: "Sponsor 3", url: "https://example3.com" },
-		{ image: "/example/logo4.png", name: "Sponsor 4", url: "https://example4.com" },
+		{ image	: "/example/logo4.png", name: "Sponsor 4", url: "https://example4.com" },
 		{ image: "/example/logo5.png", name: "Sponsor 5", url: "https://example5.com" },
 		{ image: "/example/logo6.png", name: "Sponsor 6", url: "https://example6.com" },
 		{ image: "/example/logo7.png", name: "Sponsor 7", url: "https://example7.com" }
@@ -30,28 +30,12 @@
 	// Schedule Configuration - You don't need to use this exact schedule, this is just an example!
 	const scheduleData: { title: string; items: { event: string; time: string; }[] }[] = [
 		{
-			title: "Saturday, September 27th",
-			items: [
-				{ event: "Doors open", time: "11:00 AM" },
-				{ event: "Opening ceremony", time: "12:00 PM" },
-				{ event: "Lunch", time: "12:30 PM" },
-				{ event: "Start working on your project!", time: "1:00 PM" },
-				{ event: "Workshop 1", time: "2:00 PM" },
-				{ event: "Activity 1", time: "4:00 PM" },
-				{ event: "Workshop 2", time: "4:00 PM" },
-				{ event: "Dinner", time: "6:00 PM" },
-				{ event: "Lightning talks", time: "8:00 PM" },
-				{ event: "Midnight surprise", time: "12:00 AM" }
-			]
+			title: "TBA",
+			// items: [
+			//	{ event: "TBA", time: "TBA" },
+		//	]
 		},
-		{
-			title: "Sunday, September 28th",
-			items: [
-				{ event: "Breakfast", time: "8:00 AM" },
-				{ event: "Demos!", time: "10:30 AM" },
-				{ event: "Closing ceremony", time: "12:00 PM" }
-			]
-		}
+
 	];
 
 	
@@ -75,31 +59,57 @@
 
 	// Cities where the game jam is happening
 	const cities = `Columbus
+	Wien
 Lisbon 
+Vienna
 Boston
+Wien
 Giza
+Vienna
 Vancouver
+Wien
 Houston
+Vienna
 New York City
+Wien
 Bengaluru
+Vienna
 Tampa
+Wien
 Auckland
+Vienna
 Omaha
+Wien
 Phoenix
+Vienna
 Madrid
+Wien
 Boise
+Vienna
 Ottawa
+Wien
 Hangzhou
+Vienna
 Islamabad
+Wien
 London
+Vienna
 Visakhapatnam
+Wien
 Dubai
+Vienna
 San Francisco
+Wien
 Minneapolis
+Vienna
 Seattle
+Wien
 Singapore
+Vienna
 Sydney
-Mumbai`.split("\n")
+Wien
+Mumbai
+Vienna`.split("\n")
 
 	function createSmoothPath(points: Array<{ x: number; y: number }>) {
 		if (points.length < 2) return "";
@@ -1108,6 +1118,7 @@ Mumbai`.split("\n")
 </div>
 {/if}
 
+
 <!-- Gamejam Text Section -->
 <div class="w-full bg-[#FCEFC5] flex justify-center py-16 relative overflow-hidden max-h-[400px]">
 	<!-- Cloud backdrop for gamejam text -->
@@ -1208,104 +1219,10 @@ Mumbai`.split("\n")
 <div class="w-full bg-gradient-to-b from-[#FDC5D1] to-[#FAE3C9] items-center justify-center px-0 md:px-8 relative pt-36">
 	<div class="w-full max-w-5xl lg:max-w-6xl mx-auto px-2 md:px-8">
 		<div class="relative w-full min-w-72">
-			<img src="banner-city.png" alt="Find a Daydream Near You" class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/3 md:-translate-y-[40%] h-48 w-auto z-100 scale-[1.15] md:scale-[1.65] saturate-70 brightness-110 object-contain px-4 pointer-events-none">
-			
-			<!-- Map container with cloudy edges -->
-			<div class="relative w-full h-156 overflow-hidden bg-transparent">
-				<iframe 
-					src={eventAddress ? "/event-map?location=" + encodeURIComponent(eventAddress) : "/map"}
-					class="w-full h-full border-0 bg-[#acd4e0]"
-					style="
-						mask-image: 
-							linear-gradient(white, white),
-							url('/clouds-loop-mask-2.png'),
-							url('/clouds-loop-mask-1.png'),
-							url('/clouds-loop-mask-3.png'),
-							url('/clouds-loop-mask-4.png'),
-							url('/cloud-corner-1.png'),
-							url('/cloud-corner-2.png'),
-							url('/cloud-corner-3.png'),
-							url('/cloud-corner-4.png');
-						mask-position: 
-							center,
-							top left,
-							bottom left,
-							left top,
-							right top,
-							bottom left,
-							top left,
-							top right,
-							bottom right;
-						mask-size: 
-							auto auto,
-							auto 72px,
-							auto 72px,
-							72px auto,
-							72px auto,
-							100px 100px,
-							100px 100px,
-							100px 100px,
-							100px 100px;
-						mask-repeat: 
-							no-repeat,
-							repeat-x,
-							repeat-x,
-							repeat-y,
-							repeat-y,
-							no-repeat,
-							no-repeat,
-							no-repeat,
-							no-repeat;
-						-webkit-mask-image: 
-							linear-gradient(white, white),
-							url('/clouds-loop-mask-2.png'),
-							url('/clouds-loop-mask-1.png'),
-							url('/clouds-loop-mask-3.png'),
-							url('/clouds-loop-mask-4.png'),
-							url('/cloud-corner-1.png'),
-							url('/cloud-corner-2.png'),
-							url('/cloud-corner-3.png'),
-							url('/cloud-corner-4.png');
-						-webkit-mask-position: 
-							center,
-							top left,
-							bottom left,
-							left top,
-							right top,
-							bottom left,
-							top left,
-							top right,
-							bottom right;
-						-webkit-mask-size: 
-							auto auto,
-							auto 72px,
-							auto 72px,
-							72px auto,
-							72px auto,
-							100px 100px,
-							100px 100px,
-							100px 100px,
-							100px 100px;
-						-webkit-mask-repeat: 
-							no-repeat,
-							repeat-x,
-							repeat-x,
-							repeat-y,
-							repeat-y,
-							no-repeat,
-							no-repeat,
-							no-repeat,
-							no-repeat;
-						mask-type: luminance;
-						mask-mode: luminance;
-						mask-composite: exclude, add, add, add, add, add, add, add, add;
-					"
-					title="Daydream Events Map">
-				</iframe>
-			</div>
+		
 			
 			{#if eventAddress}
-				<p class="text-center font-sans text-2xl pt-12 max-sm:text-xl text-[#60574b] z-10000">
+				<p class="text-cefnter font-sans text-2xl pt-12 max-sm:text-xl text-[#60574b] z-10000">
 					{#if directionsURL}
 						Daydream {eventName} is taking place at <a class="underline text-pink" href={directionsURL}>{eventAddress}</a>!
 					{:else}
@@ -1488,7 +1405,7 @@ Mumbai`.split("\n")
 			<img src="window-1.png" alt="window" class="w-full h-full object-contain max-md:scale-130 max-xl:scale-110 max-lg:scale-115">
 			<div class="absolute top-20 left-12 right-12 bottom-16 flex flex-col items-center justify-center text-center px-24  opacity-70 max-[900px]:mx-[15vw] max-sm:mx-0 max-sm:px-5 max-lg:px-14 max-xl:px-18">
 				<h3 class="text-xl font-serif font-bold mb-4 max-lg:mb-0 max-md:text-base">What do I need?</h3>
-				<p class="text-sm">Your laptop, chargers, toiletries, sleeping bags, and an open mind!</p>
+				<p class="text-sm">Your laptop, chargers, and an open mind!</p>
 			</div>
 		</div>
 
