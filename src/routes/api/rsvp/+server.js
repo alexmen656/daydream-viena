@@ -1,50 +1,26 @@
-import Airtable from 'airtable';
+export const prerender = true;
 import { json } from '@sveltejs/kit';
-import { AIRTABLE_API_KEY, AIRTABLE_BASE_ID, AIRTABLE_RSVPS_TABLE } from '$env/static/private';
 
-if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID) {
-	console.warn('Airtable environment variables not configured, email saving will be skipped');
-}
-
-const base = AIRTABLE_API_KEY && AIRTABLE_BASE_ID 
-	? new Airtable({
-		apiKey: AIRTABLE_API_KEY
-	}).base(AIRTABLE_BASE_ID)
-	: null;
-
-export async function POST({ request, getClientAddress }) {
+/**
+ * @param {import('@sveltejs/kit').RequestEvent} event
+ */
+export async function POST(event) {
 	try {
+		const { request, getClientAddress } = event;
 		const { email, city } = await request.json();
-		
 		if (!email) {
 			return json({ error: 'Email is required' }, { status: 400 });
 		}
-		
 		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 		if (!emailRegex.test(email)) {
 			return json({ error: 'Invalid email format' }, { status: 400 });
 		}
-		
 		// get IP address
-		const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || getClientAddress();
-		
-		if (base) {
-			await base(AIRTABLE_RSVPS_TABLE || 'participant_rsvps').create([
-				{
-					fields: {
-						email,
-						ip,
-						city,
-					}
-				}
-			]);
-		}
-		
+		const ip = request.headers.get('x-forwarded-for')?.split(',')[0] || (getClientAddress && getClientAddress());
+		// Hier könnte man weitere Logik einfügen, z.B. Logging oder Speicherung an anderer Stelle
 		return new Response(null, { status: 200 });
-		
 	} catch (error) {
-		console.error('Error saving email to Airtable:', error);
-		
+		console.error('Error processing RSVP:', error);
 		return new Response(null, { status: 418 });
 	}
 }
