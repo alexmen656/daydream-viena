@@ -12,7 +12,7 @@
 	// Configuration - Put your information here!
 	const eventName = "Wien"; // This should be the name of your event WITHOUT "Daydream" at the start
 	const eventLocation = "Wien";
-	const eventAddress = "Wien, Österreich"; // Leave this empty if you don't want an address
+	const eventAddress = "the Danube International School Vienna"; // Leave this empty if you don't want an address
 	const signupLink = "https://forms.hackclub.com/daydream-sign-up?event=rectRv5ujPG8rllEc"; // Get your custom sign up link from this page: https://airtable.com/apppg7RHZv6feM66l/shr4kFqURo8fMIRie
 	// These two are optional-- leave them empty if you don't have anything!
 	const directionsURL = ""
@@ -178,24 +178,13 @@
 		{
 			title: currentLanguage === 'de' ? "Samstag, 27. September" : "Saturday, September 27th",
 			items: [
-				{ event: t.scheduleItems.doorsOpen, time: "11:00" },
-				{ event: t.scheduleItems.openingCeremony, time: "12:00" },
-				{ event: t.scheduleItems.lunch, time: "12:30" },
-				{ event: t.scheduleItems.startWorking, time: "13:00" },
-				{ event: t.scheduleItems.workshop1, time: "14:00" },
-				{ event: t.scheduleItems.activity1, time: "16:00" },
-				{ event: t.scheduleItems.workshop2, time: "16:00" },
-				{ event: t.scheduleItems.dinner, time: "18:00" },
-				{ event: t.scheduleItems.lightningTalks, time: "20:00" },
-				{ event: t.scheduleItems.midnightSurprise, time: "00:00" }
+
 			]
 		},
 		{
 			title: currentLanguage === 'de' ? "Sonntag, 28. September" : "Sunday, September 28th",
 			items: [
-				{ event: t.scheduleItems.breakfast, time: "08:00" },
-				{ event: t.scheduleItems.demos, time: "10:30" },
-				{ event: t.scheduleItems.closingCeremony, time: "12:00" }
+
 			]
 		}
 	];
