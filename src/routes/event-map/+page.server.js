@@ -1,5 +1,3 @@
-export const prerender = true;
-
 
 
 /** @type {import('./$types').PageServerLoad} */

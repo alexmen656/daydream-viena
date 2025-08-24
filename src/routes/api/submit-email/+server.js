@@ -1,4 +1,3 @@
-export const prerender = true;
 import { json } from '@sveltejs/kit';
 /**
  * @param {import('@sveltejs/kit').RequestEvent} event
