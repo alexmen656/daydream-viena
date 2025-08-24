@@ -7,7 +7,7 @@
 	 */
 
 	// Language system
-	let currentLanguage: 'de' | 'en' = 'de';
+	let currentLanguage: 'de' | 'en' = 'en';
 	
 	// Configuration - Put your information here!
 	const eventName = "Wien"; // This should be the name of your event WITHOUT "Daydream" at the start
