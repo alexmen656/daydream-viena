@@ -6,14 +6,159 @@
 	 * Then, configure the event name, location, and schedule below:
 	 */
 
+	// Language system
+	let currentLanguage: 'de' | 'en' = 'de';
+	
 	// Configuration - Put your information here!
-	const eventName = "Vienna"; // This should be the name of your event WITHOUT "Daydream" at the start
-	const eventLocation = "Vienna";
-	const eventAddress = "Vienna"; // Leave this empty if you don't want an address
+	const eventName = "Wien"; // This should be the name of your event WITHOUT "Daydream" at the start
+	const eventLocation = "Wien";
+	const eventAddress = "Wien, Österreich"; // Leave this empty if you don't want an address
 	const signupLink = "https://forms.hackclub.com/daydream-sign-up?event=rectRv5ujPG8rllEc"; // Get your custom sign up link from this page: https://airtable.com/apppg7RHZv6feM66l/shr4kFqURo8fMIRie
 	// These two are optional-- leave them empty if you don't have anything!
 	const directionsURL = ""
 	const contactLink = "mailto:vienna@daydream.hackclub.com"
+	
+	// Translations
+	const translations = {
+		de: {
+			// General
+			schedule: "Programm",
+			sponsors: "Sponsoren",
+			faq: "Häufige Fragen",
+			signUp: "Anmelden",
+			getInTouch: "Kontakt aufnehmen",
+			
+			// Hero section
+			welcomeText: "Servus Hacker, Musiker und Künstler!",
+			heroDescription: "Willkommen zu Hack Club's neuestem Abenteuer. Diesen Herbst laden wir euch ein, bei Daydream mitzumachen - dem weltgrößten Game Jam, der gleichzeitig in 100 Städten stattfindet.",
+			hackClubWantsYou: "Hack Club möchte, dass ihr diesen Herbst ein Spiel macht.",
+			noGameDev: "Betrachtet euch nicht als Game Developer? Kein Problem - wir haben viele Online- und Präsenz-Workshops für euch, um euer erstes Spiel zu machen!",
+			invitation: "Diesen Herbst laden wir euch ein, etwas Neues zu lernen, etwas zu machen, auf das ihr richtig stolz seid, neue Freunde zu finden und gemeinsam ein unglaubliches Abenteuer zu erleben.",
+			withLove: "Mit lieben Grüßen aus der Alpenrepublik,",
+			signatures: "Augie und Renran vom Hack Club HQ",
+			
+			// Schedule
+			scheduleItems: {
+				doorsOpen: "Türen öffnen",
+				openingCeremony: "Eröffnungsfeier", 
+				lunch: "Mittagspause",
+				startWorking: "Beginnt mit euren Projekten!",
+				workshop1: "Workshop 1",
+				activity1: "Aktivität 1",
+				workshop2: "Workshop 2", 
+				dinner: "Abendessen",
+				lightningTalks: "Lightning Talks",
+				midnightSurprise: "Mitternachtsüberraschung",
+				breakfast: "Frühstück",
+				demos: "Präsentationen!",
+				closingCeremony: "Abschlussfeier"
+			},
+			
+			// Steps
+			step1: "für Daydream Wien anmelden",
+			step2: "An einem Workshop teilnehmen und Game Development lernen",
+			step3: "Ein Team mit anderen Jugendlichen beim Event finden",
+			step4: "Beginnt euer Spiel zu bauen - keine Erfahrung nötig",
+			step5: "Teilt eure Kreation mit der Welt!",
+			
+			// FAQ
+			faqItems: {
+				q1: "Wer kann bei Daydream teilnehmen?",
+				a1: "Alle Oberstufen- und höhere Mittelschüler sind herzlich willkommen! Auch aus ganz Österreich und den Nachbarländern.",
+				q2: "Kann ich einen Daydream in meiner Stadt organisieren?",
+				a2: "Auf jeden Fall! Kontaktiert uns über daydream@hackclub.com oder tritt #daydream auf Slack bei.",
+				q3: "Das alles, gratis?",
+				a3: "Jawohl! Essen, Goodies und gute Stimmung sind inklusive. Und wenn ihr von weiter her anreist (z.B. aus Salzburg oder Innsbruck), übernehmen wir die Kosten für ÖBB-Tickets oder Benzin.",
+				q4: "Was brauche ich?",
+				a4: "Euren Laptop, Ladegeräte, Hygieneartikel, Schlafsäcke und einen offenen Geist! Und vielleicht eine Jause für zwischendurch.",
+				q5: "Was hat Hack Club schon gemacht?",
+				a5: "Hack Club hat einen Hackathon im GitHub HQ veranstaltet, einen Game Jam in 50 Städten, einen Hackathon in einem Zug von Vermont nach Los Angeles und vieles mehr!",
+				q6: "Ich bin nicht gut im Programmieren. Kann ich trotzdem mitmachen?",
+				a6: "Dieser Game Jam ist für alle Skill-Level! Wir haben Workshops und andere Events, also kommt dazu und lasst uns gemeinsam lernen.",
+				q7: "Was ist, wenn meine Eltern Bedenken haben?",
+				a7: "Wir helfen gerne! Ihr könnt unseren Elternleitfaden hier sehen, oder sie können uns unter daydream@hackclub.com für Fragen kontaktieren.",
+				q8: "Was kann ich bei Daydream machen?",
+				a8: "JEDE Art von Spiel basierend auf dem Thema! Plattformspiel, Visual Novel, Clicker Game, etc. Seid so kreativ wie möglich - vielleicht sogar ein Spiel über Wien!"
+			},
+			
+			// Meta
+			pageTitle: `Daydream ${eventName} - ${eventLocation} Game Jam`,
+			pageDescription: `Mach mit bei Daydream ${eventName} in ${eventLocation}! Ein von Jugendlichen geleiteter Game Jam, bei dem du fantastische Spiele mit anderen Oberstufenschülern baust. Essen, Workshops und Preise inklusive!`,
+			pageKeywords: `Game Jam, Hackathon, Jugend Programmieren, Hack Club, Game Development, ${eventLocation}, ${eventName}, Wien, Österreich`
+		},
+		en: {
+			// General
+			schedule: "Schedule",
+			sponsors: "Sponsors", 
+			faq: "FAQ",
+			signUp: "Sign up",
+			getInTouch: "Get in touch",
+			
+			// Hero section
+			welcomeText: "Dear Hackers, Musicians, and Artists,",
+			heroDescription: "Welcome to Hack Club's newest adventure. This fall we invite you to join us for Daydream, the world's biggest Game Jam happening simultaneously in 100 cities.",
+			hackClubWantsYou: "Hack Club wants you to make a game this fall.",
+			noGameDev: "Don't consider yourself a game dev? No problem - we have tons of online and in-person workshops for you to make your first game!",
+			invitation: "This fall, we invite you to learn something new, make something you're really proud of, meet new friends, and go on an incredible adventure together.",
+			withLove: "With love,",
+			signatures: "Augie and Renran from Hack Club HQ",
+			
+			// Schedule
+			scheduleItems: {
+				doorsOpen: "Doors open",
+				openingCeremony: "Opening ceremony",
+				lunch: "Lunch",
+				startWorking: "Start working on your project!",
+				workshop1: "Workshop 1",
+				activity1: "Activity 1", 
+				workshop2: "Workshop 2",
+				dinner: "Dinner",
+				lightningTalks: "Lightning talks",
+				midnightSurprise: "Midnight surprise",
+				breakfast: "Breakfast",
+				demos: "Demos!",
+				closingCeremony: "Closing ceremony"
+			},
+			
+			// Steps
+			step1: "for Daydream Vienna",
+			step2: "Attend a workshop and learn about game development",
+			step3: "Find a team of other teenagers at the event",
+			step4: "Start building your game - no experience needed",
+			step5: "Share what you made with the world!",
+			
+			// FAQ
+			faqItems: {
+				q1: "Who can participate in Daydream?",
+				a1: "All high-school & upper-middle-school aged students are welcome to come!",
+				q2: "Can I organize a Daydream in my city?",
+				a2: "Definitely! Contact us via daydream@hackclub.com or join #daydream on slack.",
+				q3: "All this, for free?",
+				a3: "Yep! Food, swag and good vibes are all included. Plus, if you're joining us from afar, we'll cover the cost of gas or a bus / train ticket.",
+				q4: "What do I need?",
+				a4: "Your laptop, chargers, toiletries, sleeping bags, and an open mind!",
+				q5: "What has Hack Club done before?",
+				a5: "Hack Club has run a hackathon in at GitHub HQ, a Game Jam in 50 cities, a hackathon on a train from Vermont to Los Angeles, and more!",
+				q6: "I'm not good at coding. Can I still participate?",
+				a6: "This game jam is for all skill levels! We'll have workshops and other events so join us and let's learn together.",
+				q7: "What if my parents are concerned?",
+				a7: "We're here to help! You can see our parent guide here, or they can reach out to us at daydream@hackclub.com for questions.",
+				q8: "What can I make at Daydream?",
+				a8: "ANY type of game based on the theme! Platformer, visual novel, clicker game, etc. Be as creative as possible!"
+			},
+			
+			// Meta
+			pageTitle: `Daydream ${eventName} - ${eventLocation} Game Jam`,
+			pageDescription: `Join Daydream ${eventName} in ${eventLocation}! A teen-led game jam where you'll build amazing games with other high schoolers. Food, workshops, and prizes included!`,
+			pageKeywords: `game jam, hackathon, teen coding, Hack Club, game development, ${eventLocation}, ${eventName}, Vienna, Austria`
+		}
+	};
+	
+	$: t = translations[currentLanguage];
+	
+	function toggleLanguage() {
+		currentLanguage = currentLanguage === 'de' ? 'en' : 'de';
+	}
 	
 	// Sponsors Configuration - disable this if you don't have any sponsors to display!
 	const sponsorsEnabled = false; // Set to false to hide the entire sponsors section
@@ -27,29 +172,30 @@
 		{ image: "/example/logo7.png", name: "Sponsor 7", url: "https://example7.com" }
 	];*/
 	
-	// Schedule Configuration - You don't need to use this exact schedule, this is just an example!
-	const scheduleData: { title: string; items: { event: string; time: string; }[] }[] = [
+	
+	// Schedule Configuration - Austrian dates and times
+	$: scheduleData = [
 		{
-			title: "Saturday, September 27th",
+			title: currentLanguage === 'de' ? "Samstag, 27. September" : "Saturday, September 27th",
 			items: [
-				{ event: "Doors open", time: "11:00 AM" },
-				{ event: "Opening ceremony", time: "12:00 PM" },
-				{ event: "Lunch", time: "12:30 PM" },
-				{ event: "Start working on your project!", time: "1:00 PM" },
-				{ event: "Workshop 1", time: "2:00 PM" },
-				{ event: "Activity 1", time: "4:00 PM" },
-				{ event: "Workshop 2", time: "4:00 PM" },
-				{ event: "Dinner", time: "6:00 PM" },
-				{ event: "Lightning talks", time: "8:00 PM" },
-				{ event: "Midnight surprise", time: "12:00 AM" }
+				{ event: t.scheduleItems.doorsOpen, time: "11:00" },
+				{ event: t.scheduleItems.openingCeremony, time: "12:00" },
+				{ event: t.scheduleItems.lunch, time: "12:30" },
+				{ event: t.scheduleItems.startWorking, time: "13:00" },
+				{ event: t.scheduleItems.workshop1, time: "14:00" },
+				{ event: t.scheduleItems.activity1, time: "16:00" },
+				{ event: t.scheduleItems.workshop2, time: "16:00" },
+				{ event: t.scheduleItems.dinner, time: "18:00" },
+				{ event: t.scheduleItems.lightningTalks, time: "20:00" },
+				{ event: t.scheduleItems.midnightSurprise, time: "00:00" }
 			]
 		},
 		{
-			title: "Sunday, September 28th",
+			title: currentLanguage === 'de' ? "Sonntag, 28. September" : "Sunday, September 28th",
 			items: [
-				{ event: "Breakfast", time: "8:00 AM" },
-				{ event: "Demos!", time: "10:30 AM" },
-				{ event: "Closing ceremony", time: "12:00 PM" }
+				{ event: t.scheduleItems.breakfast, time: "08:00" },
+				{ event: t.scheduleItems.demos, time: "10:30" },
+				{ event: t.scheduleItems.closingCeremony, time: "12:00" }
 			]
 		}
 	];
@@ -69,9 +215,9 @@
 	
 	// Get current URL for dynamic metadata
 	$: currentUrl = `https://daydream.hackclub.com${$page.url.pathname}`;
-	$: pageTitle = `Daydream ${eventName} - ${eventLocation} Game Jam`;
-	$: pageDescription = `Join Daydream ${eventName} in ${eventLocation}! A teen-led game jam where you'll build amazing games with other high schoolers. Food, workshops, and prizes included!`;
-	$: pageKeywords = `game jam, hackathon, teen coding, Hack Club, game development, ${eventLocation}, ${eventName}`;
+	$: pageTitle = t.pageTitle;
+	$: pageDescription = t.pageDescription;
+	$: pageKeywords = t.pageKeywords;
 
 	// Cities where the game jam is happening
 	const cities = `Columbus
@@ -98,6 +244,7 @@ San Francisco
 Minneapolis
 Seattle
 Singapore
+Wien
 Sydney
 Mumbai`.split("\n")
 
@@ -898,6 +1045,16 @@ Mumbai`.split("\n")
 	</a>
 </div>
 
+<!-- Language Toggle Button -->
+<div class="fixed top-4 right-4 z-50">
+	<button 
+		on:click={toggleLanguage}
+		class="bg-white/80 hover:bg-white transition-colors duration-200 rounded-full px-4 py-2 shadow-lg border-2 border-[#8B4513]/20 font-serif text-[#8B4513] font-bold"
+	>
+		{currentLanguage === 'de' ? '🇬🇧 EN' : '🇦🇹 DE'}
+	</button>
+</div>
+
 <div class="w-full relative flex items-start justify-center">
 	<!-- background -->
 	<div class="absolute top-0 left-0 w-full h-full -z-50 bg-[#FCEFC5]"></div>
@@ -907,22 +1064,22 @@ Mumbai`.split("\n")
 		<div class="relative z-20 px-20 pt-20 pb-52 rounded-lg mb-0 max-sm:px-18" style="background-image: url('/letter-top.png'), linear-gradient(to bottom, #FCEFC5 100px, transparent 100px), url('/letter-loop.png'); background-size: 100% auto, 100% auto, 100% auto; background-repeat: no-repeat, no-repeat, repeat-y; background-position: top, top, top; background-attachment: local, local, local;">
 			<div class="absolute bottom-0 left-0 w-full h-24 z-10 pointer-events-none bg-[url('/clouds-loop.png')] bg-repeat-x bg-bottom bg-contain"></div>
 			<h2 class="text-5xl font-serif italic text-[#8B4513] mb-10 relative">
-				Dear Hackers, Musicians, and Artist,
+				{t.welcomeText}
 				<img src="/underline.svg" alt="" class="absolute left-0 -bottom-3 w-64 h-auto opacity-70">
 			</h2>
 			
 			<div class="text-[#8B4513] font-serif text-xl leading-relaxed space-y-8">
-				<p>Welcome to Hack Club's newest adventure. This fall we invite you to join us for Daydream, the world's biggest Game Jam happening simultaneously in 100 cities.</p>
+				<p>{t.heroDescription}</p>
 
-				<p class="font-bold text-2xl">Hack Club wants you to make a game this fall.</p>
+				<p class="font-bold text-2xl">{t.hackClubWantsYou}</p>
 
-				<p>Don't consider yourself a game dev? No problem - we have tons of online and in-person workshops for you to make your first game! </p>
+				<p>{t.noGameDev}</p>
 
-				<p>This fall, we invite you to learn something new, make something you're really proud of, meet new friends, and go on an incredible adventure together.</p>
+				<p>{t.invitation}</p>
 
-				<p class="mb-2">With love,</p>
+				<p class="mb-2">{t.withLove}</p>
 
-				<p class="italic text-2xl opacity-85">Augie and Renran from Hack Club HQ</p>
+				<p class="italic text-2xl opacity-85">{t.signatures}</p>
 			</div>
 		</div>
 	</div>
@@ -948,7 +1105,7 @@ Mumbai`.split("\n")
 			<!-- Header Section -->
 			<div class="w-full bg-[url('/billboard-bg-texture.png')] bg-contain bg-repeat py-6 relative" style="border-bottom: 8px solid #B4B4C5;">
 				<h2 class="text-4xl font-serif text-[#F0F0FF] text-center">
-					Schedule
+					{t.schedule}
 				</h2>
 				<!-- Brush texture overlay for header -->
 				<div class="absolute top-0 left-0 w-full h-full bg-[url('brushstroking.png')] bg-size-[100vw_100vh] bg-repeat mix-blend-overlay opacity-60 pointer-events-none"></div>
@@ -1014,7 +1171,7 @@ Mumbai`.split("\n")
 			<!-- Header Section -->
 			<div class="w-full bg-[url('/billboard-bg-texture.png')] bg-contain bg-repeat py-6 relative" style="border-bottom: 8px solid #B4B4C5;">
 				<h2 class="text-4xl font-serif text-[#F0F0FF] text-center">
-					Sponsors
+					{t.sponsors}
 				</h2>
 				<!-- Brush texture overlay for header -->
 				<div class="absolute top-0 left-0 w-full h-full bg-[url('brushstroking.png')] bg-size-[100vw_100vh] bg-repeat mix-blend-overlay opacity-60 pointer-events-none"></div>
@@ -1069,7 +1226,10 @@ Mumbai`.split("\n")
 					{#if contactLink}
 						<!-- Call to action for sponsors -->
 						<div class="mt-8 text-center">
-							<p class="text-lg text-[#335969]">Want to sponsor Daydream {eventName}? <a href={contactLink} class="underline hover:text-[#477783] transition-colors">Get in touch</a></p>
+							<p class="text-lg text-[#335969]">
+								{currentLanguage === 'de' ? `Daydream ${eventName} sponsern?` : `Want to sponsor Daydream ${eventName}?`} 
+								<a href={contactLink} class="underline hover:text-[#477783] transition-colors">{t.getInTouch}</a>
+							</p>
 						</div>
 					{/if}
 				</div>
@@ -1143,7 +1303,8 @@ Mumbai`.split("\n")
 			<div class="relative w-72 h-40 max-md:w-80 animate-hover ![--hover:-0.15rem] ![animation-delay:1.7s] z-20" data-point="1">
 				<img src="paper1.png" alt="" class="w-full h-full object-contain">
 				<div class="absolute inset-0 justify-center text-center p-6 text-xl font-serif max-md:text-lg text-[#8B4513] inline-block content-center">
-					<span class="font-sans text-[#E472AB] font-bold text-[1.3rem] mr-1">#1:</span> <a href={signupLink} class="underline">Sign up</a> for Daydream {eventName}
+					<span class="font-sans text-[#E472AB] font-bold text-[1.3rem] mr-1">#1:</span> 
+					<a href={signupLink} class="underline">{t.signUp}</a> {t.step1}
 				</div>
 			</div>
 		</div>
@@ -1157,7 +1318,7 @@ Mumbai`.split("\n")
 			<div class="relative w-72 h-40 max-md:w-80 animate-hover ![--hover:-0.15rem] ![animation-delay:0.3s] z-20" data-point="2">
 				<img src="paper2.png" alt="" class="w-full h-full object-contain">
 				<div class="absolute inset-0 justify-center text-center p-6 text-xl font-serif max-md:text-lg text-[#8B4513] inline-block content-center">
-					<span class="font-sans text-[#639DEB] font-bold text-[1.3rem] mr-1">#2:</span> Attend a workshop and learn about game development
+					<span class="font-sans text-[#639DEB] font-bold text-[1.3rem] mr-1">#2:</span> {t.step2}
 				</div>
 			</div>
 		</div>
@@ -1170,7 +1331,7 @@ Mumbai`.split("\n")
 			<div class="relative w-72 h-40 max-md:w-80 animate-hover ![--hover:-0.15rem] ![animation-delay:1.4s] z-20" data-point="3">
 				<img src="paper3.png" alt="" class="w-full h-full object-contain">
 				<div class="absolute inset-0 justify-center text-center p-6 text-xl font-serif max-md:text-lg text-[#8B4513] inline-block content-center">
-					<span class="font-sans text-[#AB68E2] font-bold text-[1.3rem] mr-1">#3:</span> Find a team of other teenagers at the event
+					<span class="font-sans text-[#AB68E2] font-bold text-[1.3rem] mr-1">#3:</span> {t.step3}
 				</div>
 			</div>
 		</div>
@@ -1183,7 +1344,7 @@ Mumbai`.split("\n")
 			<div class="relative w-72 h-40 max-md:w-80 animate-hover ![--hover:-0.15rem] ![animation-delay:2.3s] z-20" data-point="4">
 				<img src="paper4.png" alt="" class="w-full h-full object-contain">
 				<div class="absolute inset-0 justify-center text-center p-6 text-xl font-serif max-md:text-lg text-[#8B4513] inline-block content-center">
-					<span class="font-sans text-[#F2993E] font-bold text-[1.3rem] mr-1">#4:</span> Start building your game - <em>no experience needed</em>
+					<span class="font-sans text-[#F2993E] font-bold text-[1.3rem] mr-1">#4:</span> {t.step4}
 				</div>
 			</div>
 		</div>
@@ -1194,7 +1355,7 @@ Mumbai`.split("\n")
 	<div class="flex flex-col items-center w-full basis-full translate-y-40 max-md:translate-y-12 z-20">
 		<div class="relative">
 			<div class="bg-[url('/card-final.png')] bg-contain bg-no-repeat bg-center text-2xl font-serif pt-24 px-8 w-128 h-96 text-center max-md:w-80 max-md:h-80 max-md:text-xl max-md:pt-16 animate-hover ![--hover:-0.15rem] ![animation-delay:1.9s]" data-point="5">
-				<span class="font-sans text-[#F2CC32] font-bold text-[1.5rem] mr-1">#5:</span> Share what you made with the world!
+				<span class="font-sans text-[#F2CC32] font-bold text-[1.5rem] mr-1">#5:</span> {t.step5}
 			</div>
 		</div>
 	</div>
@@ -1460,8 +1621,8 @@ Mumbai`.split("\n")
 		<div class="relative transform -rotate-2">
 			<img src="window-3.png" alt="window" class="w-full h-full object-contain max-md:scale-130 max-xl:scale-110 max-lg:scale-115">
 			<div class="absolute top-20 left-12 right-12 bottom-16 flex flex-col items-center justify-center text-center px-24 opacity-70 max-[900px]:mx-[15vw] max-sm:mx-0 max-sm:px-5 max-lg:px-14 max-xl:px-18">
-				<h3 class="text-xl font-serif font-bold mb-4 max-lg:mb-0 max-md:text-base">Who can participate in Daydream?</h3>
-				<p class="text-sm">All high-school & upper-middle-school aged students are welcome to come!</p>
+				<h3 class="text-xl font-serif font-bold mb-4 max-lg:mb-0 max-md:text-base">{t.faqItems.q1}</h3>
+				<p class="text-sm">{t.faqItems.a1}</p>
 		</div>
 		</div>
 
@@ -1469,8 +1630,8 @@ Mumbai`.split("\n")
 		<div class="relative transform rotate-1">
 			<img src="window-4.png" alt="window" class="w-full h-full object-contain max-md:scale-130 max-xl:scale-110 max-lg:scale-115">
 			<div class="absolute top-20 left-12 right-12 bottom-16 flex flex-col items-center justify-center text-center px-24 opacity-70 max-[900px]:mx-[15vw] max-sm:mx-0 max-sm:px-5 max-lg:px-14 max-xl:px-18">
-				<h3 class="text-xl font-serif font-bold mb-4 max-lg:mb-0 max-md:text-base">Can I organize a Daydream in my city?</h3>
-				<p class="text-sm">Definitely! Contact us via daydream@hackclub.com or join #daydream on slack.</p>
+				<h3 class="text-xl font-serif font-bold mb-4 max-lg:mb-0 max-md:text-base">{t.faqItems.q2}</h3>
+				<p class="text-sm">{t.faqItems.a2}</p>
 			</div>
 		</div>
 
@@ -1478,8 +1639,8 @@ Mumbai`.split("\n")
 		<div class="relative transform rotate-2">
 			<img src="window-2.png" alt="window" class="w-full h-full object-contain max-md:scale-130 max-xl:scale-110 max-lg:scale-115">
 			<div class="absolute top-20 left-12 right-12 bottom-16 flex flex-col items-center justify-center text-center px-24  opacity-70 max-[900px]:mx-[15vw] max-sm:mx-0 max-sm:px-5 max-lg:px-14 max-xl:px-18">
-				<h3 class="text-xl font-serif font-bold mb-4 max-lg:mb-0 max-md:text-base">All this, for free?</h3>
-				<p class="text-sm">Yep! Food, swag and good vibes are all included. Plus, if you're joining us from afar, we'll cover the cost of gas or a bus / train ticket.</p>
+				<h3 class="text-xl font-serif font-bold mb-4 max-lg:mb-0 max-md:text-base">{t.faqItems.q3}</h3>
+				<p class="text-sm">{t.faqItems.a3}</p>
 			</div>
 		</div>
 
@@ -1487,8 +1648,8 @@ Mumbai`.split("\n")
 		<div class="relative transform -rotate-1">
 			<img src="window-1.png" alt="window" class="w-full h-full object-contain max-md:scale-130 max-xl:scale-110 max-lg:scale-115">
 			<div class="absolute top-20 left-12 right-12 bottom-16 flex flex-col items-center justify-center text-center px-24  opacity-70 max-[900px]:mx-[15vw] max-sm:mx-0 max-sm:px-5 max-lg:px-14 max-xl:px-18">
-				<h3 class="text-xl font-serif font-bold mb-4 max-lg:mb-0 max-md:text-base">What do I need?</h3>
-				<p class="text-sm">Your laptop, chargers, toiletries, sleeping bags, and an open mind!</p>
+				<h3 class="text-xl font-serif font-bold mb-4 max-lg:mb-0 max-md:text-base">{t.faqItems.q4}</h3>
+				<p class="text-sm">{t.faqItems.a4}</p>
 			</div>
 		</div>
 
@@ -1496,8 +1657,8 @@ Mumbai`.split("\n")
 		<div class="relative transform rotate-1">
 			<img src="window-4.png" alt="window" class="w-full h-full object-contain max-md:scale-130 max-xl:scale-110 max-lg:scale-115">
 			<div class="absolute top-20 left-12 right-12 bottom-16 flex flex-col items-center justify-center text-center px-24 opacity-70 max-[900px]:mx-[15vw] max-sm:mx-0 max-sm:px-5 max-lg:px-14 max-xl:px-18">
-				<h3 class="text-xl font-serif font-bold mb-4 max-lg:mb-1 max-md:text-base">What has Hack Club done before?</h3>
-				<p class="text-sm">Hack Club has run a hackathon in at GitHub HQ, a Game Jam in 50 cities, a hackathon on a train from Vermont to Los Angeles, and more!</p>
+				<h3 class="text-xl font-serif font-bold mb-4 max-lg:mb-1 max-md:text-base">{t.faqItems.q5}</h3>
+				<p class="text-sm">{t.faqItems.a5}</p>
 			</div>
 		</div>
 
@@ -1505,8 +1666,8 @@ Mumbai`.split("\n")
 		<div class="relative transform rotate-1">
 			<img src="window-3.png" alt="window" class="w-full h-full object-contain max-md:scale-130 max-xl:scale-110 max-lg:scale-115">
 			<div class="absolute top-20 left-12 right-12 bottom-16 flex flex-col items-center justify-center text-center px-24 opacity-70 max-[900px]:mx-[15vw] max-sm:mx-0 max-sm:px-5 max-lg:px-14 max-xl:px-18">
-				<h3 class="text-xl font-serif font-bold mb-4 max-lg:mb-0 max-md:text-base">I'm not good at coding. Can I still participate?</h3>
-				<p class="text-sm">This game jam is for all skill levels! We'll have workshops and other events so join us and let's learn together.</p>
+				<h3 class="text-xl font-serif font-bold mb-4 max-lg:mb-0 max-md:text-base">{t.faqItems.q6}</h3>
+				<p class="text-sm">{t.faqItems.a6}</p>
 			</div>
 		</div>
 
@@ -1514,8 +1675,8 @@ Mumbai`.split("\n")
 		<div class="relative transform -rotate-2">
 			<img src="window-2.png" alt="window" class="w-full h-full object-contain max-md:scale-130 max-xl:scale-110 max-lg:scale-115">
 			<div class="absolute top-20 left-12 right-12 bottom-16 flex flex-col items-center justify-center text-center px-24 opacity-70 max-[900px]:mx-[15vw] max-sm:mx-0 max-sm:px-5 max-lg:px-14 max-xl:px-18">
-				<h3 class="text-xl font-serif font-bold mb-4 max-lg:mb-0 max-md:text-base">What if my parents are concerned?</h3>
-				<p class="text-sm">We're here to help! You can see our parent guide here, or they can reach out to us at daydream@hackclub.com for questions.</p>
+				<h3 class="text-xl font-serif font-bold mb-4 max-lg:mb-0 max-md:text-base">{t.faqItems.q7}</h3>
+				<p class="text-sm">{t.faqItems.a7}</p>
 			</div>
 		</div>
 
@@ -1523,8 +1684,8 @@ Mumbai`.split("\n")
 		<div class="relative transform -rotate-1">
 			<img src="window-1.png" alt="window" class="w-full h-full object-contain max-md:scale-130 max-xl:scale-110 max-lg:scale-115">
 			<div class="absolute top-20 left-12 right-12 bottom-16 flex flex-col items-center justify-center text-center px-24 opacity-70 max-[900px]:mx-[15vw] max-sm:mx-0 max-sm:px-5 max-lg:px-14 max-xl:px-18">
-				<h3 class="text-xl font-serif font-bold mb-4 max-lg:mb-0 max-md:text-base">What can I make at Daydream?</h3>
-				<p class="text-sm">ANY type of game based on the theme! Platformer, visual novel, clicker game, etc. Be as creative as possible!</p>
+				<h3 class="text-xl font-serif font-bold mb-4 max-lg:mb-0 max-md:text-base">{t.faqItems.q8}</h3>
+				<p class="text-sm">{t.faqItems.a8}</p>
 			</div>
 		</div>
 	</div>
