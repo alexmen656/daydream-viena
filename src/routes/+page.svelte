@@ -15,7 +15,7 @@
 	const eventAddress = "the Danube International School Vienna"; // Leave this empty if you don't want an address
 	const signupLink = "https://forms.hackclub.com/daydream-sign-up?event=rectRv5ujPG8rllEc"; // Get your custom sign up link from this page: https://airtable.com/apppg7RHZv6feM66l/shr4kFqURo8fMIRie
 	// These two are optional-- leave them empty if you don't have anything!
-	const directionsURL = ""
+	const directionsURL = "https://www.google.com/maps/place/Danube+International+School+Vienna+GmbH/@48.2098183,16.3947901,17z/data=!3m1!4b1!4m6!3m5!1s0x476d07124d580dab:0x5f764d59d413a792!8m2!3d48.2098183!4d16.397365!16s%2Fg%2F1tl1gpf0"
 	const contactLink = "mailto:vienna@daydream.hackclub.com"
 	
 	// Translations
@@ -1358,101 +1358,6 @@ Mumbai`.split("\n")
 <div class="w-full bg-gradient-to-b from-[#FDC5D1] to-[#FAE3C9] items-center justify-center px-0 md:px-8 relative pt-36">
 	<div class="w-full max-w-5xl lg:max-w-6xl mx-auto px-2 md:px-8">
 		<div class="relative w-full min-w-72">
-			<img src="banner-city.png" alt="Find a Daydream Near You" class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/3 md:-translate-y-[40%] h-48 w-auto z-100 scale-[1.15] md:scale-[1.65] saturate-70 brightness-110 object-contain px-4 pointer-events-none">
-			
-			<!-- Map container with cloudy edges -->
-			<div class="relative w-full h-156 overflow-hidden bg-transparent">
-				<iframe 
-					src={eventAddress ? "/event-map?location=" + encodeURIComponent(eventAddress) : "/map"}
-					class="w-full h-full border-0 bg-[#acd4e0]"
-					style="
-						mask-image: 
-							linear-gradient(white, white),
-							url('/clouds-loop-mask-2.png'),
-							url('/clouds-loop-mask-1.png'),
-							url('/clouds-loop-mask-3.png'),
-							url('/clouds-loop-mask-4.png'),
-							url('/cloud-corner-1.png'),
-							url('/cloud-corner-2.png'),
-							url('/cloud-corner-3.png'),
-							url('/cloud-corner-4.png');
-						mask-position: 
-							center,
-							top left,
-							bottom left,
-							left top,
-							right top,
-							bottom left,
-							top left,
-							top right,
-							bottom right;
-						mask-size: 
-							auto auto,
-							auto 72px,
-							auto 72px,
-							72px auto,
-							72px auto,
-							100px 100px,
-							100px 100px,
-							100px 100px,
-							100px 100px;
-						mask-repeat: 
-							no-repeat,
-							repeat-x,
-							repeat-x,
-							repeat-y,
-							repeat-y,
-							no-repeat,
-							no-repeat,
-							no-repeat,
-							no-repeat;
-						-webkit-mask-image: 
-							linear-gradient(white, white),
-							url('/clouds-loop-mask-2.png'),
-							url('/clouds-loop-mask-1.png'),
-							url('/clouds-loop-mask-3.png'),
-							url('/clouds-loop-mask-4.png'),
-							url('/cloud-corner-1.png'),
-							url('/cloud-corner-2.png'),
-							url('/cloud-corner-3.png'),
-							url('/cloud-corner-4.png');
-						-webkit-mask-position: 
-							center,
-							top left,
-							bottom left,
-							left top,
-							right top,
-							bottom left,
-							top left,
-							top right,
-							bottom right;
-						-webkit-mask-size: 
-							auto auto,
-							auto 72px,
-							auto 72px,
-							72px auto,
-							72px auto,
-							100px 100px,
-							100px 100px,
-							100px 100px,
-							100px 100px;
-						-webkit-mask-repeat: 
-							no-repeat,
-							repeat-x,
-							repeat-x,
-							repeat-y,
-							repeat-y,
-							no-repeat,
-							no-repeat,
-							no-repeat,
-							no-repeat;
-						mask-type: luminance;
-						mask-mode: luminance;
-						mask-composite: exclude, add, add, add, add, add, add, add, add;
-					"
-					title="Daydream Events Map">
-				</iframe>
-			</div>
 			
 			{#if eventAddress}
 				<p class="text-center font-sans text-2xl pt-12 max-sm:text-xl text-[#60574b] z-10000">
