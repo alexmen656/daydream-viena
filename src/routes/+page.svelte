@@ -29,7 +29,7 @@
 			getInTouch: "Kontakt aufnehmen",
 			
 			// Hero section
-			welcomeText: "Servus Hacker, Musiker und Künstler!",
+			welcomeText: "Servus Hacker!",
 			heroDescription: "Willkommen zu Hack Club's neuestem Abenteuer. Diesen Herbst laden wir euch ein, bei Daydream mitzumachen - dem weltgrößten Game Jam, der gleichzeitig in 100 Städten stattfindet.",
 			hackClubWantsYou: "Hack Club möchte, dass ihr diesen Herbst ein Spiel macht.",
 			noGameDev: "Betrachtet euch nicht als Game Developer? Kein Problem - wir haben viele Online- und Präsenz-Workshops für euch, um euer erstes Spiel zu machen!",
@@ -95,7 +95,7 @@
 			getInTouch: "Get in touch",
 			
 			// Hero section
-			welcomeText: "Dear Hackers,,",
+			welcomeText: "Dear Hackers,",
 			heroDescription: "Welcome to Hack Club's newest adventure. This fall we invite you to join us for Daydream, the world's biggest Game Jam happening simultaneously in 100 cities.",
 			hackClubWantsYou: "Hack Club wants you to make a game this fall.",
 			noGameDev: "Don't consider yourself a game dev? No problem - we have tons of online and in-person workshops for you to make your first game!",
