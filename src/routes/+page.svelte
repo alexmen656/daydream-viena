@@ -95,7 +95,7 @@
 			getInTouch: "Get in touch",
 			
 			// Hero section
-			welcomeText: "Dear Hackers, Musicians, and Artists,",
+			welcomeText: "Dear Hackers,,",
 			heroDescription: "Welcome to Hack Club's newest adventure. This fall we invite you to join us for Daydream, the world's biggest Game Jam happening simultaneously in 100 cities.",
 			hackClubWantsYou: "Hack Club wants you to make a game this fall.",
 			noGameDev: "Don't consider yourself a game dev? No problem - we have tons of online and in-person workshops for you to make your first game!",
